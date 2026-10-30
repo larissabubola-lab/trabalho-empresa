@@ -1,0 +1,122 @@
+.black-ops-one-regular {
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .nova-flat-regular {
+    font-family: "Nova Flat", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+
+  
+  *, *::before, *::after{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+  }
+  
+  html, body{
+      width:100%;
+      height:100%;
+  }
+  
+  header{
+      width:100%;
+      height:85px;
+      display:flex;
+      background:black;
+      align-items:center;
+      box-shadow:0px 5px 30px black;
+      position:fixed;
+      top:0;
+      left:0;
+      color:white;
+  }
+
+#titulo{
+    width:fit-content;
+    height:100%;
+    display:flex;
+    align-items:center;
+    cursor:pointer;
+    transition:300ms ease;
+    text-shadow:grey 5px 5px 1px 
+}
+
+#titulo:hover{
+    transform:scale(1.1);
+    
+}
+  
+#titulo h1{
+  font-family: "Black Ops One", system-ui;
+    font-size:35px;
+    margin-left:10px;
+    
+}
+
+#titulo i{
+    width:55px;
+    height:55px;
+    font-size:30px;
+    margin-left:20px;
+    border:solid;
+    padding-top:10px;
+    padding-left:10px;
+    border-radius:50%;
+}
+
+.traco{
+    margin-left:20px;
+    font-family: "Black Ops One", system-ui;
+    font-size:35px;
+}
+
+#botoes{
+    margin-left:20px;
+    width:fit-content;
+    height:fit-content;
+    display:flex;
+    gap:40px;
+}
+
+#botoes button{
+    background:transparent;
+    color:white;
+    border:none;
+    font-family: "Nova Flat", system-ui;
+    cursor:pointer;
+    font-size:25px;
+    transition:300ms ease;
+    position:relative;
+}
+
+#botoes button:hover{
+    background:white;
+    color:black;
+    padding: 10px;
+    border-radius:10px;
+    border-bottom:none;
+}
+
+#perfil{
+    width:fit-content;
+    height:fit-content;
+    margin-left:50px;
+    display:flex;
+    gap:50px;
+    font-size:30px;
+}
+#perfil i{
+    cursor:pointer;
+    transition:300ms ease;
+    
+}
+#perfil i:hover{
+    transform:scale(1.2);
+}
+  

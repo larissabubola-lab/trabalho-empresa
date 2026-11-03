@@ -35,6 +35,7 @@
       top:0;
       left:0;
       color:white;
+      z-index:10;
   }
 
 #titulo{
@@ -103,6 +104,10 @@
     border-bottom:none;
 }
 
+#botoes button.ativo{
+    border-bottom:solid 2px white;
+}
+
 #perfil{
     width:fit-content;
     height:fit-content;
@@ -119,4 +124,433 @@
 #perfil i:hover{
     transform:scale(1.2);
 }
-  
+
+body{
+    font-family:"Nova Flat", system-ui;
+    background:#f4f4f4;
+    color:black;
+}
+
+#pesquisa{
+    width:100%;
+    margin-top:85px;
+    padding:25px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    background:white;
+    border-bottom:solid 1px #ddd;
+}
+
+#busca{
+    width:50%;
+    height:45px;
+    padding:0px 20px;
+    font-family:"Nova Flat", system-ui;
+    font-size:20px;
+    border:solid 2px black;
+    border-radius:25px;
+    outline:none;
+}
+
+#pesquisa button{
+    width:45px;
+    height:45px;
+    font-size:20px;
+    background:black;
+    color:white;
+    border:solid 2px black;
+    border-radius:50%;
+    cursor:pointer;
+    transition:300ms ease;
+}
+
+#pesquisa button:hover{
+    background:white;
+    color:black;
+}
+
+#produtos{
+    width:100%;
+    padding:40px;
+}
+
+#produtos h2{
+    font-family:"Black Ops One", system-ui;
+    font-size:35px;
+}
+
+#contagem{
+    margin:5px 0px 25px 0px;
+    color:grey;
+}
+
+#lista_produtos{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));
+    gap:30px;
+}
+
+.produto{
+    position:relative;
+    background:white;
+    padding:15px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    border:solid 1px #ddd;
+    border-radius:10px;
+    transition:300ms ease;
+}
+
+.produto:hover{
+    transform:scale(1.03);
+    box-shadow:0px 5px 20px rgba(0,0,0,0.3);
+}
+
+.produto img{
+    width:100%;
+    aspect-ratio:1;
+    object-fit:cover;
+    border-radius:10px;
+    background:#eee;
+}
+
+.produto h3{
+    font-size:20px;
+    font-weight:400;
+}
+
+.produto p{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.produto button, #modal button, #rodape_carrinho button{
+    padding:10px;
+    font-family:"Nova Flat", system-ui;
+    font-size:18px;
+    background:black;
+    color:white;
+    border:solid 2px black;
+    border-radius:10px;
+    cursor:pointer;
+    transition:300ms ease;
+}
+
+.produto button:hover, #modal button:hover, #rodape_carrinho button:hover{
+    background:white;
+    color:black;
+}
+
+.vazio{
+    grid-column:1 / -1;
+    text-align:center;
+    color:grey;
+    font-size:20px;
+}
+
+footer{
+    width:100%;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+    background:black;
+    color:white;
+}
+
+#selos{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:40px;
+    font-size:18px;
+}
+
+#links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+}
+
+#links a{
+    cursor:pointer;
+    text-decoration:underline;
+    transition:300ms ease;
+}
+
+#links a:hover{
+    transform:scale(1.1);
+}
+
+footer p{
+    color:grey;
+}
+
+#carrinho{
+    width:380px;
+    max-width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    position:fixed;
+    top:0;
+    right:-400px;
+    background:white;
+    box-shadow:0px 0px 30px black;
+    z-index:30;
+    transition:300ms ease;
+}
+
+#carrinho.aberto{
+    right:0;
+}
+
+#topo_carrinho{
+    padding:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:black;
+    color:white;
+}
+
+#topo_carrinho i{
+    cursor:pointer;
+    font-size:25px;
+}
+
+#itens_carrinho{
+    flex:1;
+    padding:20px;
+    overflow-y:auto;
+}
+
+.item{
+    padding:15px 0px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    border-bottom:solid 1px #ddd;
+}
+
+.item span{
+    display:block;
+    color:grey;
+}
+
+.quantidade{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.quantidade i{
+    cursor:pointer;
+    font-size:20px;
+}
+
+#rodape_carrinho{
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    border-top:solid 1px #ddd;
+}
+
+#linha_total{
+    display:flex;
+    justify-content:space-between;
+    font-size:22px;
+}
+
+#fundo{
+    width:100%;
+    height:100%;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.6);
+    z-index:40;
+}
+
+#fundo.aberto{
+    display:flex;
+}
+
+#modal{
+    width:560px;
+    max-width:92%;
+    max-height:85%;
+    padding:30px;
+    overflow-y:auto;
+    position:relative;
+    background:white;
+    border-radius:10px;
+}
+
+#fechar{
+    position:absolute;
+    top:20px;
+    right:20px;
+    cursor:pointer;
+    font-size:20px;
+}
+
+#modal h2{
+    margin-bottom:15px;
+    font-family:"Black Ops One", system-ui;
+    font-weight:400;
+}
+
+#modal p, #modal li{
+    margin-bottom:10px;
+    line-height:1.4;
+}
+
+#modal ul{
+    margin-left:20px;
+}
+
+#modal form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+#modal label{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+
+#modal label.check{
+    flex-direction:row;
+    align-items:flex-start;
+    gap:10px;
+}
+
+#modal input[type=text], #modal input[type=email], #modal input[type=password]{
+    height:40px;
+    padding:0px 10px;
+    font-family:"Nova Flat", system-ui;
+    font-size:18px;
+    border:solid 2px black;
+    border-radius:10px;
+}
+
+#modal a{
+    cursor:pointer;
+    text-decoration:underline;
+}
+
+#msg_cadastro{
+    color:#b00020;
+}
+
+.direito{
+    padding:10px 0px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    border-bottom:solid 1px #ddd;
+}
+
+#banner{
+    width:900px;
+    max-width:94%;
+    padding:20px;
+    display:none;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:black;
+    color:white;
+    border-radius:10px;
+    box-shadow:0px 0px 30px black;
+    z-index:50;
+}
+
+#banner.visivel{
+    display:flex;
+}
+
+#banner p{
+    flex:1;
+    min-width:280px;
+}
+
+#banner div{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+#banner button{
+    padding:10px;
+    font-family:"Nova Flat", system-ui;
+    font-size:16px;
+    background:white;
+    color:black;
+    border:solid 2px white;
+    border-radius:10px;
+    cursor:pointer;
+    transition:300ms ease;
+}
+
+#banner button:hover{
+    background:black;
+    color:white;
+}
+
+#aviso{
+    padding:15px 25px;
+    position:fixed;
+    top:100px;
+    left:50%;
+    transform:translateX(-50%);
+    background:white;
+    color:black;
+    border:solid 2px black;
+    border-radius:10px;
+    box-shadow:0px 5px 20px rgba(0,0,0,0.4);
+    opacity:0;
+    pointer-events:none;
+    z-index:60;
+    transition:300ms ease;
+}
+
+#aviso.visivel{
+    opacity:1;
+}
+
+.produto .favorito{
+    width:40px;
+    height:40px;
+    padding:0px;
+    position:absolute;
+    top:25px;
+    right:25px;
+    font-size:20px;
+    background:white;
+    color:black;
+    border-radius:50%;
+}
+
+.produto .favorito.ativo{
+    background:black;
+    color:white;
+}

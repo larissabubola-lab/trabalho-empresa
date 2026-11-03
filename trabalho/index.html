@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <title>Lorem ipsum</title>
-        <meta charset="UTF8">
+        <title>Realsupli</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https:;">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
 
@@ -26,22 +28,83 @@
 
                 <div class="traco">|</div>
                 <div id="botoes">
-                    <button>Todos os produtos</button>
-                    <button>Proteinas</button>
-                    <button>Creatina</button>
-                    <button>Whey</button>
-                    <button>Outros</button>
+                    <button class="ativo" onclick="filtrar('todos',this)">Todos os produtos</button>
+                    <button onclick="filtrar('proteinas',this)">Proteinas</button>
+                    <button onclick="filtrar('creatina',this)">Creatina</button>
+                    <button onclick="filtrar('whey',this)">Whey</button>
+                    <button onclick="filtrar('outros',this)">Outros</button>
                 </div>
 
                 <div class="traco">|</div>
 
                 <div id="perfil">
-                    <i class="bi bi-person-circle" title="conta"></i>
-                    <i class="bi bi-cart" title="carrinho"></i>
-                    <i class="bi bi-suit-heart" title="favoritos"></i>
+                    <i class="bi bi-person-circle" title="conta" onclick="abrir_conta()"></i>
+                    <i class="bi bi-cart" title="carrinho" onclick="abrir_carrinho()"></i>
+                    <i class="bi bi-suit-heart" title="favoritos" onclick="ver_favoritos()"></i>
                 </div>
             </header>
 
+            <div id="pesquisa">
+                <input type="search" id="busca" placeholder="Pesquisar suplementos..." maxlength="60" autocomplete="off" oninput="mostrar_produtos()">
+                <button onclick="mostrar_produtos()"><i class="bi bi-search"></i></button>
+            </div>
+
+            <section id="produtos">
+                <h2>Produtos</h2>
+                <p id="contagem"></p>
+                <div id="lista_produtos"></div>
+            </section>
+
+            <footer>
+
+                <div id="links">
+                    <a onclick="abrir_privacidade()">Política de Privacidade</a>
+                    <a onclick="abrir_direitos()">Direitos do titular</a>
+                    <a onclick="abrir_seguranca()">Segurança da informação</a>
+                    <a onclick="abrir_cookies()">Gerenciar cookies</a>
+                </div>
+
+                <p>Realsupli © 2026 - Encarregado de dados (DPO): privacidade@realsupli.com.br</p>
+            </footer>
         </main>
+
+        <aside id="carrinho">
+            <div id="topo_carrinho">
+                <h2>Carrinho</h2>
+                <i class="bi bi-x-lg" onclick="fechar_carrinho()"></i>
+            </div>
+            <div id="itens_carrinho"></div>
+            <div id="rodape_carrinho">
+                <div id="linha_total">
+                    <span>Total</span>
+                    <strong id="total">R$ 0,00</strong>
+                </div>
+                <button onclick="finalizar()">Finalizar compra</button>
+            </div>
+        </aside>
+
+        <div id="fundo">
+            <div id="modal">
+                <i class="bi bi-x-lg" id="fechar" onclick="fechar_modal()"></i>
+                <div id="modal_conteudo"></div>
+            </div>
+        </div>
+
+        <div id="banner">
+            <p>
+                <i class="bi bi-shield-lock"></i>
+                Usamos cookies para o funcionamento do site e, com o seu consentimento, para desempenho e marketing, conforme a LGPD (Lei 13.709/2018).
+                Você pode mudar sua escolha quando quiser.
+            </p>
+            <div>
+                <button onclick="salvar_consentimento(true,true)">Aceitar todos</button>
+                <button onclick="salvar_consentimento(false,false)">Somente necessários</button>
+                <button onclick="abrir_cookies()">Personalizar</button>
+            </div>
+        </div>
+
+        <div id="aviso"></div>
+
+        <script src="script.js"></script>
     </body>
 </html>

@@ -52,15 +52,102 @@
             <section id="produtos">
                 <h2>Produtos</h2>
                 <p id="contagem"></p>
-                <div id="lista_produtos"></div>
+                <div id="lista_produtos">
+                    <div class="produto" data-categoria="whey">
+                        <button class="favorito" onclick="favoritar(this)"><i class="bi bi-suit-heart"></i></button>
+                        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRZRB-XmS942TaUjrisaNaiLTCkEo5uy5S7zHzoG5wt6cEXlb6JIcbubIM0ezOFPgbvwQXl-ebjqy_RBOfsQdfx-LF7zUVVUtC9lnehTrJYqFFkS9PciZ9JBZmLyyiCj4-jEDcn5w&usqp=CAc/400x400" alt="Whey Protein Concentrado 900g">
+                        <h3>Whey Protein Concentrado 900g</h3>
+                        <p>R$ 119,90</p>
+                        <button onclick="adicionar(1)"><i class="bi bi-cart-plus"></i> Adicionar</button>
+                    </div>
+                    <div class="produto" data-categoria="whey">
+                        <button class="favorito" onclick="favoritar(this)"><i class="bi bi-suit-heart"></i></button>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbb49VbFQlBZ-lzXQzhwfmChDbP6nUvvH-ZVuYMK_ZVw&s=10/400x400" alt="Whey Protein Isolado 900g">
+                        <h3>Whey Protein Isolado 900g</h3>
+                        <p>R$ 189,90</p>
+                        <button onclick="adicionar(2)"><i class="bi bi-cart-plus"></i> Adicionar</button>
+                    </div>
+                    <div class="produto" data-categoria="whey">
+                        <button class="favorito" onclick="favoritar(this)"><i class="bi bi-suit-heart"></i></button>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmRyksjabVTXyaf-qSa3wftW1qGSoYDAZ0NxEZKlsSPw&s=10/400x400" alt="Whey Protein Hidrolisado 900g">
+                        <h3>Whey Protein Hidrolisado 900g</h3>
+                        <p>R$ 229,90</p>
+                        <button onclick="adicionar(3)"><i class="bi bi-cart-plus"></i> Adicionar</button>
+                    </div>
+                    <div class="produto" data-categoria="creatina">
+                        <button class="favorito" onclick="favoritar(this)"><i class="bi bi-suit-heart"></i></button>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhO2GItj4hK6kok6FWqQ7Jf5kESqpUxVbfd3suSoqvPQ&s=10/400x400" alt="Creatina Monohidratada 300g">
+                        <h3>Creatina Monohidratada 300g</h3>
+                        <p>R$ 89,90</p>
+                        <button onclick="adicionar(4)"><i class="bi bi-cart-plus"></i> Adicionar</button>
+                    </div>
+                    <div class="produto" data-categoria="creatina">
+                        <button class="favorito" onclick="favoritar(this)"><i class="bi bi-suit-heart"></i></button>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ZHqh0IrwS7FQxBA1IgRBAQgKHjhT0si5Uwu8jsRQ5A&s=10/400x400" alt="Creatina Creapure 250g">
+                        <h3>Creatina Creapure 250g</h3>
+                        <p>R$ 139,90</p>
+                        <button onclick="adicionar(5)"><i class="bi bi-cart-plus"></i> Adicionar</button>
+                    </div>
+                    <div class="produto" data-categoria="proteinas">
+                        <button class="favorito" onclick="favoritar(this)"><i class="bi bi-suit-heart"></i></button>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV5Zd4wFi4OinOHnmkjIm_YSehxLrQPbDDKnmG6xzG8g&s=10/400x400" alt="Albumina 500g">
+                        <h3>Albumina 500g</h3>
+                        <p>R$ 59,90</p>
+                        <button onclick="adicionar(6)"><i class="bi bi-cart-plus"></i> Adicionar</button>
+                    </div>
+                    <div class="produto" data-categoria="proteinas">
+                        <button class="favorito" onclick="favoritar(this)"><i class="bi bi-suit-heart"></i></button>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDRCLfE03962fT7aYKfAwYj-aacjr4Kb-APUkcrJp3Qg&s/400x400" alt="Proteina Vegetal 600g">
+                        <h3>Proteina Vegetal 600g</h3>
+                        <p>R$ 99,90</p>
+                        <button onclick="adicionar(7)"><i class="bi bi-cart-plus"></i> Adicionar</button>
+                    </div>
+                    <div class="produto" data-categoria="proteinas">
+                        <button class="favorito" onclick="favoritar(this)"><i class="bi bi-suit-heart"></i></button>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgFZGbejh5Is7hTaksL11Xus1Yq5ObE_eIB8X24r7q9g&s/400x400" alt="Caseina Micelar 900g">
+                        <h3>Caseina Micelar 900g</h3>
+                        <p>R$ 149,90</p>
+                        <button onclick="adicionar(8)"><i class="bi bi-cart-plus"></i> Adicionar</button>
+                    </div>
+                    <div class="produto" data-categoria="outros">
+                        <button class="favorito" onclick="favoritar(this)"><i class="bi bi-suit-heart"></i></button>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB4D_YMtDe3dmsLs4A6gltENvKWTmtvqV5NglQMtQWrQ&s/400x400" alt="Pre-treino 300g">
+                        <h3>Pre-treino 300g</h3>
+                        <p>R$ 99,90</p>
+                        <button onclick="adicionar(9)"><i class="bi bi-cart-plus"></i> Adicionar</button>
+                    </div>
+                    <div class="produto" data-categoria="outros">
+                        <button class="favorito" onclick="favoritar(this)"><i class="bi bi-suit-heart"></i></button>
+                        <img src="https://pensefarma.vtexassets.com/arquivos/ids/177589/Bcaa_Integralmedica_Top_com_120_Capsulas.png?v=637850256549830000/400x400" alt="BCAA 120 capsulas">
+                        <h3>BCAA 120 capsulas</h3>
+                        <p>R$ 69,90</p>
+                        <button onclick="adicionar(10)"><i class="bi bi-cart-plus"></i> Adicionar</button>
+                    </div>
+                    <div class="produto" data-categoria="outros">
+                        <button class="favorito" onclick="favoritar(this)"><i class="bi bi-suit-heart"></i></button>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA4Y6E2f2KT_EeDy9sdVLt4CIuph_76b3CIGLB1CC1-w&s/400x400" alt="Multivitaminico 60 capsulas">
+                        <h3>Multivitaminico 60 capsulas</h3>
+                        <p>R$ 49,90</p>
+                        <button onclick="adicionar(11)"><i class="bi bi-cart-plus"></i> Adicionar</button>
+                    </div>
+                    <div class="produto" data-categoria="outros">
+                        <button class="favorito" onclick="favoritar(this)"><i class="bi bi-suit-heart"></i></button>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJj0j-j260xEE9RsuoGtweQ74W84idARmSbPrAyf20EQ&s=10/400x400" alt="Coqueteleira 600ml">
+                        <h3>Coqueteleira 600ml</h3>
+                        <p>R$ 29,90</p>
+                        <button onclick="adicionar(12)"><i class="bi bi-cart-plus"></i> Adicionar</button>
+                    </div>
+                    <p class="vazio" id="vazio_produtos" style="display:none">Nenhum produto encontrado</p>
+                    <p class="vazio" id="vazio_favoritos" style="display:none">Você ainda não tem favoritos</p>
+                </div>
             </section>
 
             <footer>
 
                 <div id="links">
-                    <a onclick="abrir_privacidade()">Política de Privacidade</a>
-                    <a onclick="abrir_direitos()">Direitos do titular</a>
-                    <a onclick="abrir_seguranca()">Segurança da informação</a>
+                    <a onclick="abrir_modal('privacidade')">Política de Privacidade</a>
+                    <a onclick="abrir_modal('direitos')">Direitos do titular</a>
+                    <a onclick="abrir_modal('seguranca')">Segurança da informação</a>
                     <a onclick="abrir_cookies()">Gerenciar cookies</a>
                 </div>
 
@@ -73,7 +160,141 @@
                 <h2>Carrinho</h2>
                 <i class="bi bi-x-lg" onclick="fechar_carrinho()"></i>
             </div>
-            <div id="itens_carrinho"></div>
+            <div id="itens_carrinho">
+                <div class="item" id="item1" data-preco="119.9" style="display:none">
+                    <div>
+                        Whey Protein Concentrado 900g
+                        <span>R$ 119,90</span>
+                    </div>
+                    <div class="quantidade">
+                        <i class="bi bi-dash-circle" onclick="alterar_qtd(1,-1)"></i>
+                        <p id="qtd1">0</p>
+                        <i class="bi bi-plus-circle" onclick="alterar_qtd(1,1)"></i>
+                    </div>
+                </div>
+                <div class="item" id="item2" data-preco="189.9" style="display:none">
+                    <div>
+                        Whey Protein Isolado 900g
+                        <span>R$ 189,90</span>
+                    </div>
+                    <div class="quantidade">
+                        <i class="bi bi-dash-circle" onclick="alterar_qtd(2,-1)"></i>
+                        <p id="qtd2">0</p>
+                        <i class="bi bi-plus-circle" onclick="alterar_qtd(2,1)"></i>
+                    </div>
+                </div>
+                <div class="item" id="item3" data-preco="229.9" style="display:none">
+                    <div>
+                        Whey Protein Hidrolisado 900g
+                        <span>R$ 229,90</span>
+                    </div>
+                    <div class="quantidade">
+                        <i class="bi bi-dash-circle" onclick="alterar_qtd(3,-1)"></i>
+                        <p id="qtd3">0</p>
+                        <i class="bi bi-plus-circle" onclick="alterar_qtd(3,1)"></i>
+                    </div>
+                </div>
+                <div class="item" id="item4" data-preco="89.9" style="display:none">
+                    <div>
+                        Creatina Monohidratada 300g
+                        <span>R$ 89,90</span>
+                    </div>
+                    <div class="quantidade">
+                        <i class="bi bi-dash-circle" onclick="alterar_qtd(4,-1)"></i>
+                        <p id="qtd4">0</p>
+                        <i class="bi bi-plus-circle" onclick="alterar_qtd(4,1)"></i>
+                    </div>
+                </div>
+                <div class="item" id="item5" data-preco="139.9" style="display:none">
+                    <div>
+                        Creatina Creapure 250g
+                        <span>R$ 139,90</span>
+                    </div>
+                    <div class="quantidade">
+                        <i class="bi bi-dash-circle" onclick="alterar_qtd(5,-1)"></i>
+                        <p id="qtd5">0</p>
+                        <i class="bi bi-plus-circle" onclick="alterar_qtd(5,1)"></i>
+                    </div>
+                </div>
+                <div class="item" id="item6" data-preco="59.9" style="display:none">
+                    <div>
+                        Albumina 500g
+                        <span>R$ 59,90</span>
+                    </div>
+                    <div class="quantidade">
+                        <i class="bi bi-dash-circle" onclick="alterar_qtd(6,-1)"></i>
+                        <p id="qtd6">0</p>
+                        <i class="bi bi-plus-circle" onclick="alterar_qtd(6,1)"></i>
+                    </div>
+                </div>
+                <div class="item" id="item7" data-preco="99.9" style="display:none">
+                    <div>
+                        Proteina Vegetal 600g
+                        <span>R$ 99,90</span>
+                    </div>
+                    <div class="quantidade">
+                        <i class="bi bi-dash-circle" onclick="alterar_qtd(7,-1)"></i>
+                        <p id="qtd7">0</p>
+                        <i class="bi bi-plus-circle" onclick="alterar_qtd(7,1)"></i>
+                    </div>
+                </div>
+                <div class="item" id="item8" data-preco="149.9" style="display:none">
+                    <div>
+                        Caseina Micelar 900g
+                        <span>R$ 149,90</span>
+                    </div>
+                    <div class="quantidade">
+                        <i class="bi bi-dash-circle" onclick="alterar_qtd(8,-1)"></i>
+                        <p id="qtd8">0</p>
+                        <i class="bi bi-plus-circle" onclick="alterar_qtd(8,1)"></i>
+                    </div>
+                </div>
+                <div class="item" id="item9" data-preco="99.9" style="display:none">
+                    <div>
+                        Pre-treino 300g
+                        <span>R$ 99,90</span>
+                    </div>
+                    <div class="quantidade">
+                        <i class="bi bi-dash-circle" onclick="alterar_qtd(9,-1)"></i>
+                        <p id="qtd9">0</p>
+                        <i class="bi bi-plus-circle" onclick="alterar_qtd(9,1)"></i>
+                    </div>
+                </div>
+                <div class="item" id="item10" data-preco="69.9" style="display:none">
+                    <div>
+                        BCAA 120 capsulas
+                        <span>R$ 69,90</span>
+                    </div>
+                    <div class="quantidade">
+                        <i class="bi bi-dash-circle" onclick="alterar_qtd(10,-1)"></i>
+                        <p id="qtd10">0</p>
+                        <i class="bi bi-plus-circle" onclick="alterar_qtd(10,1)"></i>
+                    </div>
+                </div>
+                <div class="item" id="item11" data-preco="49.9" style="display:none">
+                    <div>
+                        Multivitaminico 60 capsulas
+                        <span>R$ 49,90</span>
+                    </div>
+                    <div class="quantidade">
+                        <i class="bi bi-dash-circle" onclick="alterar_qtd(11,-1)"></i>
+                        <p id="qtd11">0</p>
+                        <i class="bi bi-plus-circle" onclick="alterar_qtd(11,1)"></i>
+                    </div>
+                </div>
+                <div class="item" id="item12" data-preco="29.9" style="display:none">
+                    <div>
+                        Coqueteleira 600ml
+                        <span>R$ 29,90</span>
+                    </div>
+                    <div class="quantidade">
+                        <i class="bi bi-dash-circle" onclick="alterar_qtd(12,-1)"></i>
+                        <p id="qtd12">0</p>
+                        <i class="bi bi-plus-circle" onclick="alterar_qtd(12,1)"></i>
+                    </div>
+                </div>
+                <p class="vazio" id="vazio_carrinho">Seu carrinho está vazio</p>
+            </div>
             <div id="rodape_carrinho">
                 <div id="linha_total">
                     <span>Total</span>
@@ -86,15 +307,127 @@
         <div id="fundo">
             <div id="modal">
                 <i class="bi bi-x-lg" id="fechar" onclick="fechar_modal()"></i>
-                <div id="modal_conteudo"></div>
+                <div id="modal_conteudo">
+                    <div class="conteudo" id="m_compra" style="display:none">
+                        <h2>Finalizar compra</h2>
+                        <p>Esta é uma compra simulada. Nenhum dado de pagamento é coletado ou armazenado.</p>
+                        <p>Em uma loja real, usaríamos apenas os dados necessários para pagamento e entrega (princípio da minimização, LGPD art. 6º).</p>
+                        <button onclick="concluir()">Confirmar pedido</button>
+                    </div>
+
+                    <div class="conteudo" id="m_conta" style="display:none">
+                        <h2>Criar conta</h2>
+                        <form id="form_conta" onsubmit="enviar_cadastro(event)" autocomplete="off">
+                            <label>Nome completo
+                                <input type="text" id="cad_nome" maxlength="80">
+                            </label>
+                            <label>E-mail
+                                <input type="email" id="cad_email" maxlength="80">
+                            </label>
+                            <label>Senha
+                                <input type="password" id="cad_senha" maxlength="64">
+                            </label>
+                            <label class="check">
+                                <input type="checkbox" id="cad_consentimento">
+                                <span>Li e concordo com a <a onclick="abrir_modal('privacidade')">Política de Privacidade</a> e autorizo o tratamento dos meus dados pessoais para cadastro, compra e entrega.</span>
+                            </label>
+                            <label class="check">
+                                <input type="checkbox" id="cad_marketing">
+                                <span>Desejo receber ofertas por e-mail (opcional)</span>
+                            </label>
+                            <p id="msg_cadastro"></p>
+                            <button type="submit">Cadastrar</button>
+                        </form>
+                    </div>
+
+                    <div class="conteudo" id="m_conta_criada" style="display:none">
+                        <h2>Conta criada</h2>
+                        <p>Cadastro simulado concluído. Em um site real, sua senha seria armazenada com hash e seu consentimento seria registrado com data e hora.</p>
+                        <button onclick="fechar_modal()">Fechar</button>
+                    </div>
+
+                    <div class="conteudo" id="m_cookies" style="display:none">
+                        <h2>Preferências de cookies</h2>
+                        <form id="form_cookies" onsubmit="return false">
+                            <label class="check">
+                                <input type="checkbox" checked disabled>
+                                <span>Necessários: mantêm o carrinho e a segurança do site (sempre ativos)</span>
+                            </label>
+                            <label class="check">
+                                <input type="checkbox" id="ck_desempenho">
+                                <span>Desempenho: ajudam a entender como o site é usado</span>
+                            </label>
+                            <label class="check">
+                                <input type="checkbox" id="ck_marketing">
+                                <span>Marketing: ofertas e anúncios personalizados</span>
+                            </label>
+                            <button onclick="salvar_personalizado()">Salvar preferências</button>
+                        </form>
+                    </div>
+
+                    <div class="conteudo" id="m_privacidade" style="display:none">
+                        <h2>Política de Privacidade</h2>
+                        <p>Texto ilustrativo, criado para fins acadêmicos.</p>
+                        <ul>
+                            <li><strong>Dados coletados:</strong> nome, e-mail, endereço de entrega e histórico de compras.</li>
+                            <li><strong>Finalidade:</strong> cadastro, processamento de pedidos, entrega e atendimento.</li>
+                            <li><strong>Base legal:</strong> execução de contrato e consentimento (LGPD art. 7º).</li>
+                            <li><strong>Compartilhamento:</strong> apenas com transportadoras e meios de pagamento necessários à compra.</li>
+                            <li><strong>Retenção:</strong> os dados são mantidos pelo tempo necessário à finalidade ou a obrigações legais.</li>
+                            <li><strong>Seus direitos:</strong> acesso, correção, eliminação, portabilidade e revogação do consentimento.</li>
+                            <li><strong>Encarregado (DPO):</strong> privacidade@realsupli.com.br</li>
+                        </ul>
+                    </div>
+
+                    <div class="conteudo" id="m_direitos" style="display:none">
+                        <h2>Direitos do titular</h2>
+                        <p>Conforme o art. 18 da LGPD, você pode solicitar:</p>
+                    <div class="direito">
+                        <span>Confirmação da existência de tratamento</span>
+                        <button onclick="solicitar_direito()">Solicitar</button>
+                    </div>
+                    <div class="direito">
+                        <span>Acesso aos meus dados</span>
+                        <button onclick="solicitar_direito()">Solicitar</button>
+                    </div>
+                    <div class="direito">
+                        <span>Correção de dados incompletos ou desatualizados</span>
+                        <button onclick="solicitar_direito()">Solicitar</button>
+                    </div>
+                    <div class="direito">
+                        <span>Anonimização, bloqueio ou eliminação</span>
+                        <button onclick="solicitar_direito()">Solicitar</button>
+                    </div>
+                    <div class="direito">
+                        <span>Portabilidade dos dados</span>
+                        <button onclick="solicitar_direito()">Solicitar</button>
+                    </div>
+                    <div class="direito">
+                        <span>Revogação do consentimento</span>
+                        <button onclick="solicitar_direito()">Solicitar</button>
+                    </div>
+                    </div>
+
+                    <div class="conteudo" id="m_seguranca" style="display:none">
+                        <h2>Segurança da informação</h2>
+                        <p>Medidas descritas de forma ilustrativa:</p>
+                        <ul>
+                            <li>Conexão protegida por HTTPS/TLS.</li>
+                            <li>Senhas armazenadas com hash, nunca em texto puro.</li>
+                            <li>Validação dos campos dos formulários.</li>
+                            <li>Acesso interno aos dados limitado por perfil e registrado em log.</li>
+                            <li>Dados de cartão não são armazenados: o pagamento é feito por um gateway certificado (PCI DSS).</li>
+                            <li>Plano de resposta a incidentes com comunicação à ANPD e aos titulares.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div id="banner">
             <p>
                 <i class="bi bi-shield-lock"></i>
-                Usamos cookies para o funcionamento do site e, com o seu consentimento, para desempenho e marketing, conforme a LGPD (Lei 13.709/2018).
-                Você pode mudar sua escolha quando quiser.
+                Usamos cookies para melhorar sua experiência, garantir o funcionamento do site e personalizar anúncios. Você pode gerenciar suas preferências quando quiser.
             </p>
             <div>
                 <button onclick="salvar_consentimento(true,true)">Aceitar todos</button>

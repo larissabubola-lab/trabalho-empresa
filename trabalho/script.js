@@ -1,5 +1,26 @@
 let categoria_atual="todos"
 let quantidades=[0,0,0,0,0,0,0,0,0,0,0,0,0]
+let usuarios=[]
+let usuario_logado=null
+
+let dados_salvos=localStorage.getItem("usuarios")
+if(dados_salvos){
+    usuarios=JSON.parse(dados_salvos)
+}
+
+let sessao_salva=localStorage.getItem("usuario_logado")
+if(sessao_salva){
+    usuario_logado=JSON.parse(sessao_salva)
+}
+
+function salvar_banco(){
+    localStorage.setItem("usuarios",JSON.stringify(usuarios))
+    if(usuario_logado){
+        localStorage.setItem("usuario_logado",JSON.stringify(usuario_logado))
+    }else{
+        localStorage.removeItem("usuario_logado")
+    }
+}
 
 function mostrar_aviso(texto){
     let aviso=document.getElementById("aviso")
@@ -162,9 +183,67 @@ function fechar_modal(){
 }
 
 function abrir_conta(){
+    if(usuario_logado){
+        abrir_perfil()
+    }else{
+        abrir_login()
+    }
+}
+
+function abrir_login(){
+    document.getElementById("form_login").reset()
+    document.getElementById("msg_login").textContent=""
+    abrir_modal("login")
+}
+
+function abrir_cadastro(){
     document.getElementById("form_conta").reset()
     document.getElementById("msg_cadastro").textContent=""
     abrir_modal("conta")
+}
+
+function abrir_perfil(){
+    if(!usuario_logado){
+        abrir_login()
+        return
+    }
+
+    document.getElementById("perfil_nome").textContent=usuario_logado.nome
+    document.getElementById("perfil_email").textContent=usuario_logado.email
+    document.getElementById("perfil_data").textContent=usuario_logado.data_cadastro || "Hoje"
+    document.getElementById("perfil_marketing").textContent=usuario_logado.marketing ? "Sim" : "Não"
+
+    abrir_modal("perfil")
+}
+
+function fazer_login(evento){
+    evento.preventDefault()
+    let email=document.getElementById("login_email").value.trim()
+    let senha=document.getElementById("login_senha").value
+    let mensagem=document.getElementById("msg_login")
+
+    if(!email || !senha){
+        mensagem.textContent="Informe seu e-mail e senha."
+        return
+    }
+
+    let achou=null
+    usuarios.forEach(function(u){
+        if(u.email.toLowerCase()==email.toLowerCase() && u.senha==senha){
+            achou=u
+        }
+    })
+
+    if(!achou){
+        mensagem.textContent="E-mail ou senha incorretos."
+        return
+    }
+
+    usuario_logado=achou
+    salvar_banco()
+    atualizar_icone_perfil()
+    mostrar_aviso("Bem-vindo de volta, "+usuario_logado.nome+"!")
+    abrir_perfil()
 }
 
 function enviar_cadastro(evento){
@@ -194,7 +273,72 @@ function enviar_cadastro(evento){
         return
     }
 
-    abrir_modal("conta_criada")
+    let ja_existe=false
+    usuarios.forEach(function(u){
+        if(u.email.toLowerCase()==email.toLowerCase()){
+            ja_existe=true
+        }
+    })
+
+    if(ja_existe){
+        mensagem.textContent="Já existe uma conta com esse e-mail."
+        return
+    }
+
+    let novo_usuario={
+        nome:nome,
+        email:email,
+        senha:senha,
+        marketing:document.getElementById("cad_marketing").checked,
+        data_cadastro:new Date().toLocaleDateString("pt-BR")
+    }
+
+    usuarios.push(novo_usuario)
+    usuario_logado=novo_usuario
+    salvar_banco()
+    atualizar_icone_perfil()
+    mostrar_aviso("Conta criada com sucesso!")
+    abrir_perfil()
+}
+
+function sair_conta(){
+    usuario_logado=null
+    salvar_banco()
+    atualizar_icone_perfil()
+    fechar_modal()
+    mostrar_aviso("Você saiu da sua conta")
+}
+
+function excluir_conta(){
+    let certeza=confirm("De acordo com a LGPD, você pode solicitar a eliminação completa dos seus dados. Deseja realmente excluir sua conta?")
+    if(!certeza){
+        return
+    }
+
+    let nova_lista=[]
+    usuarios.forEach(function(u){
+        if(u.email.toLowerCase()!=usuario_logado.email.toLowerCase()){
+            nova_lista.push(u)
+        }
+    })
+    usuarios=nova_lista
+    usuario_logado=null
+    salvar_banco()
+    atualizar_icone_perfil()
+    fechar_modal()
+    mostrar_aviso("Seus dados foram excluídos com sucesso (LGPD)")
+}
+
+function atualizar_icone_perfil(){
+    let icone=document.querySelector("#perfil .bi-person-circle")
+    if(!icone) return
+    if(usuario_logado){
+        icone.title="Conta de "+usuario_logado.nome
+        icone.style.color="#4CAF50"
+    }else{
+        icone.title="conta"
+        icone.style.color=""
+    }
 }
 
 function salvar_consentimento(desempenho,marketing){
@@ -234,5 +378,6 @@ document.addEventListener("keydown",function(evento){
 
 mostrar_produtos()
 desenhar_carrinho()
+atualizar_icone_perfil()
 
 document.getElementById("banner").classList.add("visivel")

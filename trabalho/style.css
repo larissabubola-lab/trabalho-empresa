@@ -451,7 +451,63 @@ footer p{
     text-decoration:underline;
 }
 
-#msg_cadastro{
+#msg_cadastro, #msg_login{
+    color:#b00020;
+}
+
+.trocar_form{
+    text-align:center;
+    margin-top:5px;
+    font-size:16px;
+}
+
+#dados_perfil{
+    background:#f9f9f9;
+    border:solid 1px #ddd;
+    border-radius:10px;
+    padding:15px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.dado_item{
+    font-size:17px;
+    word-break:break-all;
+}
+
+.aviso_lgpd{
+    background:#eef7ee;
+    border:solid 1px #b2d8b2;
+    color:#2e6930;
+    padding:12px;
+    border-radius:10px;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.aviso_lgpd i{
+    font-size:24px;
+}
+
+#acoes_perfil{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+#modal button.botao_excluir{
+    background:#b00020;
+    border-color:#b00020;
+    color:white;
+}
+
+#modal button.botao_excluir:hover{
+    background:white;
     color:#b00020;
 }
 

@@ -314,6 +314,21 @@
                         <button onclick="concluir()">Confirmar pedido</button>
                     </div>
 
+                    <div class="conteudo" id="m_login" style="display:none">
+                        <h2>Entrar na conta</h2>
+                        <form id="form_login" onsubmit="fazer_login(event)" autocomplete="off">
+                            <label>E-mail
+                                <input type="email" id="login_email" maxlength="80">
+                            </label>
+                            <label>Senha
+                                <input type="password" id="login_senha" maxlength="64">
+                            </label>
+                            <p id="msg_login"></p>
+                            <button type="submit">Entrar</button>
+                            <p class="trocar_form">Ainda não tem conta? <a onclick="abrir_cadastro()">Cadastre-se</a></p>
+                        </form>
+                    </div>
+
                     <div class="conteudo" id="m_conta" style="display:none">
                         <h2>Criar conta</h2>
                         <form id="form_conta" onsubmit="enviar_cadastro(event)" autocomplete="off">
@@ -336,7 +351,37 @@
                             </label>
                             <p id="msg_cadastro"></p>
                             <button type="submit">Cadastrar</button>
+                            <p class="trocar_form">Já tem uma conta? <a onclick="abrir_login()">Entrar</a></p>
                         </form>
+                    </div>
+
+                    <div class="conteudo" id="m_perfil" style="display:none">
+                        <h2>Minha conta</h2>
+                        <p>Gerenciamento e privacidade dos seus dados (LGPD):</p>
+                        <div id="dados_perfil">
+                            <div class="dado_item">
+                                <strong>Nome:</strong> <span id="perfil_nome"></span>
+                            </div>
+                            <div class="dado_item">
+                                <strong>E-mail:</strong> <span id="perfil_email"></span>
+                            </div>
+                            <div class="dado_item">
+                                <strong>Data de cadastro:</strong> <span id="perfil_data"></span>
+                            </div>
+                            <div class="dado_item">
+                                <strong>Receber ofertas:</strong> <span id="perfil_marketing"></span>
+                            </div>
+                        </div>
+
+                        <div class="aviso_lgpd">
+                            <i class="bi bi-shield-check"></i>
+                            <span>Seus dados são tratados conforme a LGPD (Lei nº 13.709/2018). Você pode encerrar sua sessão ou solicitar a exclusão total a qualquer momento.</span>
+                        </div>
+
+                        <div id="acoes_perfil">
+                            <button onclick="sair_conta()">Sair da conta</button>
+                            <button class="botao_excluir" onclick="excluir_conta()"><i class="bi bi-trash"></i> Excluir meus dados</button>
+                        </div>
                     </div>
 
                     <div class="conteudo" id="m_conta_criada" style="display:none">
